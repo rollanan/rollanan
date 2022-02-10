@@ -1,4 +1,4 @@
-    .tmblr-iframe{
+        .tmblr-iframe{
         
         display:none;
         
@@ -236,6 +236,185 @@ width:90%;
 } 
     
     
+    /*animation shenanigans*/
+    .dropcenter {
+        
+        margin: 50px auto;
+        
+        text-align:center;
+        
+         justify-content:center;
+
+        display:flex;
+        
+        width:90%;
+        
+        
+
+        
+        
+    }
+    
+    
+
+    
+    
+    
+    
+        .dropbtn {
+        justify-content:center;
+margin:0px auto;
+
+padding: 5px;
+color:#711f2b;
+
+ text-align: center;
+ 
+        
+        display: block;
+        
+font-weight:bold;
+        
+        font-family:         "UVA"        ;
+        font-size: x-large;
+
+
+
+
+
+                max-width: 500px;
+             
+width:100%;
+        padding:5px;
+
+
+
+        border-style:solid;
+ border-width: medium;
+ border-color:#711f2b;
+ background:#fff;
+
+
+
+
+
+        }
+    
+    
+    .dropbtn:hover {
+        
+
+        
+    }
+    
+    
+    
+    
+    .dropdown {
+        
+        
+        position: relative;
+        
+        display: inline-block;
+    
+        
+        
+        
+    }
+    
+    
+    .dropdown-content {
+         justify-content:center;
+overflow:hidden;
+        max-width: 500px;
+        padding:5px;
+        text-align:center;
+  font-weight:normal;
+
+  background-color: #ffffff;
+    
+
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+        animation: fadeoutbox 1s;
+    animation-fill-mode: forwards;
+        
+        
+    }
+    
+    .show {display:block;
+        
+        animation: fadeinbox 1s;
+
+    }
+    
+      @keyframes fadeinbox {
+    
+    
+    
+    
+    
+    
+    from { opacity: 0; 
+    display:block;
+ height:0px;
+   
+        
+        
+    }
+    
+
+    to   { opacity: 1; 
+       display:block;
+        height: 1000px;
+     
+    }
+}
+ 
+    
+     @keyframes fadeoutbox {
+    
+    
+    
+    
+    
+    
+    from { opacity: 1; 
+    
+ height:1000px;
+        
+        
+        
+    }
+    
+
+    to   { opacity: 0; 
+     
+        height: 0px;
+        display: none;
+    }
+}
+    
+        hr.rounded2 {
+  border-top: medium solid #711f2b;
+width: 100%;
+color:#711f2b;
+box-sizing:border-box;
+}   
+   
+    /* end of animation shenanigans*/
+
+
+    
+    
+    
+    
+    
+    
+    
+    
     
      hr.rounded {
   border-top: medium solid #711f2b;
@@ -245,7 +424,7 @@ box-sizing:border-box;
 }           
     
     
-    
+
     
 
     
@@ -283,8 +462,12 @@ margin-top: 50px;
     
     
   @media screen and (max-width: 1200px) {
-  .page    {
+  .page,.dropbtn    {
     font-size: xx-large;
+  
+      
+      
+      
   }
 
       
