@@ -246,10 +246,13 @@ width:90%;
          justify-content:center;
 
         display:flex;
-        
+        max-width:500px;
         width:90%;
         
-        
+           border-style:solid;
+ border-width: medium;
+ border-color:#711f2b;
+ background:#fff;
 
         
         
@@ -287,13 +290,10 @@ font-weight:bold;
 width:100%;
         padding:5px;
 
-
-
-        border-style:solid;
- border-width: medium;
- border-color:#711f2b;
  background:#fff;
 
+
+border:none;
 
 
 
@@ -322,19 +322,28 @@ width:100%;
         
     }
     
+
+
+.droppadder {
+    
+    padding:10px
+    
+    
+    
+    
+}
+
+
     
     .dropdown-content {
          justify-content:center;
 overflow:hidden;
         max-width: 500px;
-        padding-left: 5px;
-        padding-right:5px
+
         text-align:center;
   font-weight:normal;
 
   background-color: #ffffff;
-    margin-top:5px
-        margin-bottom:5px
 
   left: 0; 
   right: 0; 
