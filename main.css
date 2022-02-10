@@ -338,7 +338,7 @@ overflow:hidden;
   right: 0; 
   margin-left: auto; 
   margin-right: auto; 
-        animation: fadeoutbox 1s;
+        animation: fadeoutbox 0.5s;
     animation-fill-mode: forwards;
         
         
@@ -346,7 +346,7 @@ overflow:hidden;
     
     .show {display:block;
         
-        animation: fadeinbox 1s;
+        animation: fadeinbox 0.5s;
 
     }
     
