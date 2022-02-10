@@ -58,6 +58,8 @@ box-sizing: border-box;
     text-align: center;
        width: 100vw;
     margin-left: calc(50% - 50vw);
+font-size: 10vw
+
 }
  
  
@@ -254,9 +256,9 @@ width:90%;
         display:flex;
         
         width:90%;
-        
-        
+        max-width:500px;
 
+      
         
         
     }
@@ -295,13 +297,13 @@ width:100%;
 
 
 
-        border-style:solid;
- border-width: medium;
- border-color:#711f2b;
+
  background:#fff;
 
 
-
+                border-style:solid;
+ border-width: medium;
+ border-color:#711f2b;
 
 
         }
@@ -328,6 +330,14 @@ width:100%;
         
     }
     
+.droppadder{
+    padding:10px;
+    
+    
+    
+}
+
+
     
     .dropdown-content {
          justify-content:center;
@@ -348,6 +358,17 @@ overflow:hidden;
   margin-right: auto; 
         animation: fadeoutbox 0.5s;
     animation-fill-mode: forwards;
+        
+        
+        
+        
+        
+                  border-left:solid;
+        border-bottom:solid;
+ border-width: medium;
+ border-color:#711f2b;
+        
+        
         
         
     }
