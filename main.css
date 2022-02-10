@@ -467,7 +467,9 @@ box-sizing:border-box;
 
 word-break: break-word; 
      font-size: x-large;
-margin-top:0px;
+margin:0;
+           
+           margin-top:0px;
     margin-bottom: 50px;
 
        
