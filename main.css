@@ -327,12 +327,14 @@ width:100%;
          justify-content:center;
 overflow:hidden;
         max-width: 500px;
-        padding:5px;
+        padding-left: 5px;
+        padding-right:5px
         text-align:center;
   font-weight:normal;
 
   background-color: #ffffff;
-    
+    margin-top:5px
+        margin-bottom:5px
 
   left: 0; 
   right: 0; 
