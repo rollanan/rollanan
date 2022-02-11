@@ -1,4 +1,8 @@
-        .tmblr-iframe{
+
+/*main and commissions section*/
+
+
+.tmblr-iframe{
         
         display:none;
         
@@ -706,7 +710,208 @@ color:#711f2b;
     
     
     }
+    /*end of main and commissions section*/
+/*if you are reading this right now, you are now obligated to drink water*/
+/*start of jade and about*/
+      .whydoineedtoaddsomanyclasses {
+        
+        margin:auto 0;
+   margin-right:auto;
+        
+    }
     
+    
+    .swrapper{
+        display:block;
+        width: 100%;
+align-items:right;
+     text-align: right;
+
+    }
+    .swrapinnder {
+display: flex; justify-content: flex-end;
+    
+    }
+    
+    
+
+    .sdirect {
+        
+     
+        display:flex;
+        flex-direction:column;
+        margin: auto 0;
+        margin:50px;
+        text-align:center;
+
+        
+        max-width:300px;
+        width:90%;
+        align-items:center;
+    
+        
+    }
+    
+    .sdirectory {
+        color:#4ac925;
+            max-width:300px;
+font-weight:bold;
+margin:auto;
+
+background:#fff;
+display:inline-block;
+  
+  
+
+  
+  
+    }
+
+    
+    
+/*sidebar shenanigans*/
+    
+    .sidebar {
+  height: 100%; 
+  width: 0;
+  position: fixed; 
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+
+  transition: 0.5s; 
+  z-index:41300;
+
+}
+
+
+
+    
+    .openbtn {
+position:fixed;
+top: 0px;
+    
+
+        margin-bottom: auto;
+  
+        border:none;
+text-decoration:none;
+        display:flex;
+        flex-direction:column;
+        margin:40px;
+    }
+    
+    
+    .squiddle{
+        color:#711f2b;
+        font-family:UVA;
+        font-weight: bold;
+        font-size: x-large;
+     
+  background:#fff;
+  
+
+    }
+    
+    .squidwrap {
+        overflow:hidden;
+        min-width:00px;
+        width:100vw;
+        max-width:500px;
+          padding:10px;
+    text-align: center;
+   
+    }
+    .closelink
+
+
+
+
+{
+  
+display: table;
+justify-content:center;
+margin:0 auto;
+font-weight: bold;
+padding: 5px;
+color:#711f2b;
+text-decoration: none;
+ text-align: center;
+ border-style:solid;
+ border-width: medium;
+ border-color:#711f2b;
+ background:#fff;
+ transform: scale(0.9);
+    transition: transform 0.1s;
+
+    box-sizing:border-box;
+}
+
+    .closelink:hover
+
+
+
+{
+
+ transform: scale(1.1);
+
+     z-index: 10;
+    
+} 
+    
+
+    
+    
+      @media screen and (max-width: 1200px) {
+  .squiddle    {
+    font-size: xx-large;
+  
+      
+      
+      
+  } }
+   
+   
+   
+   
+   
+       /* end sidebar shenanigans*/
+   
+   
+      .sizeicon{
+
+       height: 2em;
+margin:auto;
+margin:10px;
+   }
+   
+   .sizeicon2{
+
+       height: 2em;
+float:left;
+margin-right:auto;
+margin-left:auto;
+   }
+      .sizeicon3{
+
+       height: 2em;
+float:right;
+margin-right:auto;
+margin-left:auto;
+
+   }
+      .sizeicon4{
+
+       height: 2em;
+float:right;
+
+
+   }
+    
+    
+/*end of jade and about*/
     
     
     
