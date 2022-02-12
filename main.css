@@ -768,7 +768,7 @@ display:inline-block;
   
     }
 
-    
+
     
 /*sidebar shenanigans*/
     
@@ -916,7 +916,8 @@ margin-left:auto;
 
        height: 1.5em;
 float:right;
-
+margin-top:auto;
+          margin-bottom:auto;
 
    }
     
