@@ -801,8 +801,13 @@ text-decoration:none;
         display:flex;
         flex-direction:column;
         margin:40px;
+        
+        transform:scale(0.9);
+        transition:0.1s;
+        
+        
     }
-    
+.openbtn:hover{transform:scale(1.1)}
     
     .squiddle{
         color:#711f2b;
