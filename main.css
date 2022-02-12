@@ -207,8 +207,7 @@ width: 500px;
     
     
     
-     .
-
+     .borderlink
 
 
 
@@ -812,16 +811,10 @@ text-decoration:none;
         font-size: x-large;
      
   background:#fff;
-   transform: scale(0.9);
-    transition: transform 0.1s;
+  
 
     }
-    .squiddle:hover{
-          transform: scale(1.1);   
-}
-
-
-
+    
     .squidwrap {
         overflow:hidden;
         min-width:00px;
