@@ -293,7 +293,7 @@ font-weight:bold;
 
 
 
-                max-width: 500px;
+                max-width: 300px;
              
 width:100%;
         padding:5px;
@@ -307,14 +307,14 @@ width:100%;
                 border-style:solid;
  border-width: medium;
  border-color:#711f2b;
-
-
+scale:0.9;
+transition:scale 0.1s;
         }
     
     
     .dropbtn:hover {
         
-
+scale:1.1;
         
     }
     
