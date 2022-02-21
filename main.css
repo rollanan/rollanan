@@ -471,10 +471,10 @@ box-sizing:border-box;
 
 word-break: break-word; 
      font-size: x-large;
-margin:0;
+margin:8;
            
-           margin-top:0px;
-    margin-bottom: 50px;
+           margin-top:8;
+    margin-bottom: 58px;
 
        
        
@@ -495,7 +495,7 @@ margin:0;
     
     
     
-  @media screen and (max-width: 1200px) {
+  @media (orientation: portrait) {
   .page,.dropbtn    {
     font-size: xx-large;
   
@@ -652,7 +652,7 @@ color:#711f2b;
  
     }
     
-    @media screen and (max-width: 1200px) {
+    @media (orientation: portrait) {
    .part1   {
    
    display:flex;
@@ -694,7 +694,7 @@ color:#711f2b;
  
     }
     
-    @media screen and (max-width: 1200px) {
+    @media (orientation: portrait) {
    .part4   {
    
    display:flex;
@@ -871,7 +871,7 @@ text-decoration: none;
 
     
     
-      @media screen and (max-width: 1200px) {
+      @media (orientation: portrait) {
   .squiddle    {
     font-size: xx-large;
   
