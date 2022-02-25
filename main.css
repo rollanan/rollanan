@@ -126,7 +126,7 @@ text-decoration: none;
     .ttext2
     {
 
-
+box-shadow:-10px 10px;
 display:block;
 font-weight: bold;
 padding: 5px;
@@ -365,11 +365,8 @@ overflow-y:scroll;overflow-x:hidden;
         
         
         
-        
-                  border-left:solid;
-        border-bottom:solid;
- border-width: medium;
- border-color:#711f2b;
+box-shadow:-10px 10px;
+
         
         height:800px;
         
@@ -589,13 +586,10 @@ max-width:500px!important;
     background:#fff;
  padding:10px;
          
-     
-            
-        border-left:solid;
-         border-bottom:solid;
+     box-shadow:-10px 10px;
+
  
- border-width: medium;
- border-color:#711f2b;
+
  background:#fff; 
           
           
