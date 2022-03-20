@@ -371,7 +371,7 @@ overflow-y:scroll;overflow-x:hidden;
  border-width: medium;
  border-color:#711f2b;
         
-        height:800px;
+        height:500px;
         
         
     }
@@ -386,6 +386,7 @@ overflow-y:scroll;overflow-x:hidden;
     
     
     
+              
     
     
     
@@ -400,7 +401,7 @@ overflow-y:scroll;overflow-x:hidden;
 
     to   { opacity: 1; 
        display:block;
-        height: 800px;
+        height: 500px;
      
     }
 }
@@ -415,7 +416,7 @@ overflow-y:scroll;overflow-x:hidden;
     
     from { opacity: 1; 
     
- height:800px;
+ height:500px;
         
         
         
