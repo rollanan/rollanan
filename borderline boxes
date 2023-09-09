@@ -1,0 +1,1639 @@
+<!--
+ borderline boxes theme
+ 
+ please consult https://www.w3schools.com/html/html5_syntax.asp and  for code cleanup
+-->
+
+<!DOCTYPE html>
+ 
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+{block:Hidden} 
+  <meta name="image:background" content="https://static.tumblr.com/..."/>
+  <meta name="if:links before description" content=""/>
+  <meta name="if:show background" content=""/>
+  <meta name="if:show custom links" content=""/>
+  <meta name="if:show custom links title" content=""/>
+  <meta name="if:show custom links 2" content=""/>
+  <meta name="if:show custom links 2 title" content=""/>
+  <meta name="if:show date" content=""/>
+  <meta name="if:show search" content=""/>
+  <meta name="if:show sidebar" content=""/>
+  <meta name="if:show sidebar 2" content=""/>
+  <meta name="if:show twitter timeline" content=""/>
+  <meta name="text:embed your twitter timeline here" content=""/>
+  <meta name="text: custom links title" content=""/>
+{/block:Hidden}
+
+<style>
+
+/*page display config*/
+
+{block:AskPage} 
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: none;
+  }
+{/block:AskPage}
+
+{block:SubmitPage}  
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: none;
+  }
+{/block:SubmitPage} 
+
+{block:HomePage} 
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: block;
+  }
+{/block:HomePage}
+     
+{block:TagPage}
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: block;
+  }
+{/block:TagPage}  
+
+{block:IndexPage}
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: block;
+  }
+{/block:IndexPage}
+
+{block:Date} 
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: block;
+  } 
+{/block:Date}
+
+{block:SearchPage}
+  .radioactivedating, .buttonlink, .reblogdiv, .notediv {
+    display: block;
+  }
+{/block:SearchPage}
+     
+/*end of page display config*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+   box-sizing: inherit;
+}
+
+/*background stuff*/ 
+       
+body {
+  background: {BackgroundColor};
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  {block:Ifshowbackground}
+  background-image: url({image:background});
+  {/block:Ifshowbackground}
+  animation: fadein 2s;
+  margin:8;
+} 
+    
+@keyframes fadein {
+  from {opacity: 0;}
+  50% {opacity: 0;}
+  to {opacity: 1;}
+}
+
+a {
+  color: {AccentColor};
+}
+       
+hr.rounded {
+  border-top: medium solid {AccentColor};
+  width: 150px;
+  color:{AccentColor};
+  box-sizing:border-box;
+}         
+
+#page {
+  font-family: "Courier";
+  word-break: break-word; 
+  font-size: medium;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (orientation: portrait) {
+  #page {
+   font-size: large;
+  }
+}  
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}       
+  
+@media (orientation: portrait) {
+  .container {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+}  
+  
+.sidebar2 {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-right: 40px;
+}
+
+@media (orientation: portrait) {
+  .sidebar2 {
+    margin:0 auto;
+    width: 90%;
+  }
+}  
+
+.sidebar{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-left: 40px;
+}
+                     
+@media (orientation: portrait) {
+  .sidebar {
+    margin:0 auto;
+    display: none;
+  }
+}  
+  
+.borderlink {
+  font-weight: bold;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+  border-style:solid;
+  border-width: medium;
+  border-color: {AccentColor};
+  background: #fff;
+  transform: scale(0.9);
+  transition: transform 0.08s;
+}
+
+.borderlink:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.main {
+  width: 500px;
+  justify-content: center;
+}
+  
+@media (orientation: portrait) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/*if you are reading this, go drink water now*/
+
+.more_notes_link_container[style] {
+  text-align: right!important;
+}
+
+.tmblr-embed {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.embed_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tumblr_video_container, .tumblr_video_iframe, #youtube_iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}   
+
+.tmblr-full {
+  display: flex;
+}
+
+.tmblr-full img {
+  width: 100%;
+  height: auto;
+}
+
+img not(lightbox-image) {
+  width: 100%;
+  height: auto
+}
+
+blockquote {
+  overflow: hidden;
+  margin: 8px 0px 0px 0px ;
+  padding-left: 8px;
+  display: block;
+  width: 100%  ;
+  border-bottom: solid;
+  border-left: solid;
+  border-width: 0px 0px 1px 1px;
+  border-color: {AccentColor};
+  background: #fff; 
+}
+
+#ask_form, #submit_form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 388px;
+}
+  
+@media (orientation: portrait) {
+  #submit_form {
+    height: 445px;
+  }
+}
+ 
+.buttonlink {
+  padding: 10px;
+  transform: 0.9%;
+  transition: transform 0.08s;
+  display: inline;
+}
+
+.buttonlink:hover {
+  transform: 1.1%;
+} 
+  
+.buttonhover {
+  transform: scale(0.9);
+  transition: transform 0.08s;
+}
+
+.buttonhover:hover {
+  transform: scale(1.1);
+}
+
+.notediv {
+  margin-top: 20px;
+  position: relative;
+  float: right;
+  transform: scale(0.9);
+  transition: transform 0.08s;
+}
+  
+.notediv:hover {
+  position: relative;
+  float: right;
+  transform: scale(1.1);
+}
+ 
+.reblogdiv {
+  margin-top: 20px;
+  position: relative;
+  float: left;
+  transform: scale(0.9);
+  transition: transform 0.08s;
+}
+
+.reblogdiv:hover {
+  position: relative;
+  float: left;
+  transform: scale(1.1);
+}
+ 
+.audio_player_iframe, .tumblr_audio_player {
+  width: 100%;
+  height: 85px;
+}
+ 
+.spotify_audio_player, .soundcloud_audio_player {
+  width: 100%;
+  height: 100%;
+}
+
+.spotify_audio_player {
+  height: 80px;
+}
+ 
+.more_notes_link_container {
+  text-transform: lowercase;
+}
+ 
+.bandcamp_audio_player {
+  width:100%
+}
+ 
+{CustomCSS}
+</style>
+
+<head>
+  <title>
+    {block:HomePage}
+      {Title}
+    {/block:HomePage}
+    {block:PermalinkPage}
+      {block:PostSummary}
+        ==>{PostSummary}
+      {/block:PostSummary}
+    {/block:PermalinkPage}
+    {block:SearchPage}
+      ==>search results for {SearchQuery}
+    {/block:SearchPage}
+    {block:TagPage}
+      ==>posts tagged {tag}
+    {/block:TagPage}
+  </title>
+  <link rel="icon" type="image/x-icon" href={Favicon}>
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  {block:Description}
+    <meta name="description" content="{MetaDescription}"/>
+  {/block:Description}
+
+<!--background randomozier-->
+                    <script>
+                        function randombg(){
+  var random= Math.floor(Math.random() * 2) + 0;
+  var bigSize = ["url('https://64.media.tumblr.com/110c876cab916245cf45d3c30e2e8219/c1e919ed71156c7d-44/s2048x3072/6b9342588d96d5b7da0dba1236710711ac6a3db1.png')",
+                 "url('https://www.prequeladventure.com/fanartbooru/_images/48fb42c1427b68510de5f3ebd8178424/4135%20-%20character%3AKatia_Managan%20knock_off%20surreal%20wallpaper.png')",];
+  document.getElementById("random").style.backgroundImage=bigSize[random];
+}
+                    </script>
+<!--end of background randomizer-->
+</head>
+<body onload="randombg()" id="random">
+  <section id="page">  
+    <div class="container">
+                    <!--Katia Managan-->
+                    <!--<a href="https://www.prequeladventure.com/2011/03/prequel-begin/"><img class="katia" style="position:fixed;bottom:0px;right:0px;" src="https://64.media.tumblr.com/4bce2ac8400ea75987c65e0850526fde/tumblr_nrq37hm7zm1s25eteo1_250.gif"></img></a>
+
+      <!-- start of actual sidebar2 -->
+
+      <div class="sidebar2">
+        {block:Ifshowsidebar}               
+          <hr class="rounded"> 
+          {block:ShowAvatar} 
+            <a class="iconimage" href={BlogURL}> 
+              <img class="iconimage" style="display:block;"src="{PortraitURL-128}">
+            </a>
+            <style>
+              .iconimage {
+                display: inline-block;
+                width: 128px;
+                margin: 0 auto;
+              }
+
+              .iconcode {
+                 text-align: center;
+              }
+            </style>
+          {/block:ShowAvatar}
+          {block:ShowTitle} 
+            <a href="{BlogURL}" class="titletext">{Title}</a>
+          {/block:ShowTitle} 
+               
+          <!-- these are the link codes -->
+
+          <style>
+            .titletext {
+              font-weight: bold;
+              padding: 5px;
+              text-decoration: none;
+              text-align: center;
+              border-style: hidden;
+              border-width: medium;
+              border-color: {AccentColor};
+              background: #fff;
+            }
+          </style>
+          {block:Ifshowsearch}
+            <hr class="rounded">
+              <div class="titletext">
+                <form class="inputtexy" action="/search" method="get">
+                <input class="inputtexy2" type="text" name="q" value="{SearchQuery}"/>
+                <input class="inputtexy3" type="submit" value="search"/>
+              </div>
+          {/block:Ifshowsearch}
+          <style>
+            .inputtexy {
+              margin-bottom: 0;
+              display: flex;
+            }
+    
+            .inputtexy2 {
+              width: 100%;
+              border: thin solid {AccentColor};
+              font-family: "Courier";
+            }
+ 
+            .inputtexy2:focus {
+              width: 100%;
+              border: thin solid {AccentColor};
+              outline: none;
+            }
+           
+            .inputtexy3 {
+              font-weight: bold;
+              padding: 5px;
+              color: {AccentColor};
+              text-decoration: none;
+              text-align: center;
+ border-style: solid;
+ border-width: medium;
+ border-color: {AccentColor};
+ background: #fff;
+ transform: scale(0.9);
+ transition: transform 0.08s;
+ font-family: "Courier"";
+
+}
+
+
+.inputtexy3:hover {
+ transform: scale(1.1);
+ z-index: 10;
+}
+
+</style>
+
+{block:ShowDescription} 
+                  
+<hr class="rounded">
+
+<div class="desccode">
+                              
+{Description}     
+
+</div>
+                
+<style>
+                    
+.desccode  {
+ padding: 5px;
+ text-align: center;
+ border-style: hidden;
+ border-width: medium;
+ border-color: {AccentColor};
+ background: #fff;
+ color: {TitleColor};
+}   
+                    
+</style>
+                   
+{/block:ShowDescription}
+                  
+{block:Ifshowcustomlinks}
+  
+{block:HasPages}
+                            
+<hr class="rounded"> 
+                             
+{block:AskEnabled}
+                             
+<a href="{BlogURL}ask" class="borderlink">{AskLabel}</a>
+                             
+{/block:AskEnabled}
+                             
+{block:Pages}
+
+<a href="{URL}" class="borderlink">{Label}</a>
+
+{/block:Pages}
+                        
+<a href="https://rollanan.tumblr.com/archive" class="borderlink">archives</a>
+    
+{/block:HasPages}
+
+{/block:Ifshowcustomlinks}
+             
+{/block:Ifshowsidebar}  
+                        
+</div>
+                    
+<!--end of sidebar2-->
+                    
+<!--these are the posts codes-->
+                    
+<div class= "main">
+                       
+                     
+                       
+                       
+                       
+       
+                       
+
+                       
+                       
+                       
+                       <!-- main -->
+   
+
+<style> .postcontent { 
+
+
+
+margin-top: 50px;
+margin-bottom:50px;
+ display: flex;
+   flex-direction: column;
+
+   position: relative;
+
+
+max-width: 500px;
+padding: 10px;
+
+
+ border-style:solid;
+ border-width: medium;
+ border-color:{AccentColor};
+
+ background:#fff;
+
+ z-index 0.1s;
+
+
+}    
+    
+   
+   
+   
+    @media (orientation: portrait) {
+  .postcontent{
+  
+    display: flex;
+   flex-direction: column;
+  
+  width:90% ;
+margin:50px auto;
+  max-width: 500px;
+
+
+  }
+ }
+   
+   
+
+
+    
+
+    
+
+    
+    
+</style>
+
+<!--divider code-->
+                       <hr class="rounded"> 
+
+                        <!--end of divider code-->
+{block:SearchPage}<a class="titletext, credittext" href="{BlogURL}search/{URLSafeSearchQuery}">{SearchResultCount} search results for {SearchQuery}</a>{/block:SearchPage}
+{block:TagPage}<a class="titletext, credittext" href="{TagURL}">posts tagged {tag}</a>{/block:TagPage}
+ 
+      
+            <style>
+          .credittext
+          {  
+display : block;
+width: 300px;
+margin: 0 auto;
+          font-weight: bold;
+padding: 5px 5px;
+
+text-decoration: none;
+ text-align: center;
+     border-style:hidden;
+ border-width: medium;
+ border-color:{AccentColor};
+
+ background:#fff;
+
+          
+              }
+@media (orientation: portrait) {
+
+      .credittext {
+          
+          max-width: 300px;
+     width:90%;
+          
+       }    }
+      </style>
+      
+      
+<!--start of search blocker-->
+       {block:NoSearchResults}
+       <div class="  postcontent   ">
+       <div class="  isthiswhatyoucallawrapper   ">
+<div class="titlecenter">congratulations!!!!!!!!</div>
+<style>
+    .titlecenter{
+        
+        text-align:center;
+        
+    }
+    
+</style>
+<div class="cappy" >
+
+<a style="color:black;"><p>you have found nothing for {SearchQuery}
+   </p>
+</a>
+
+       </div class="cappy" >
+       </div class="  isthiswhatyoucallawrapper   ">
+       </div class="  postcontent   ">
+       {/block:NoSearchResults}
+       <style>
+    .cappy  {
+
+     border-bottom:solid;
+ border-width: medium;
+ border-color:{AccentColor};
+    
+     margin-bottom: 10px;
+ background:#fff; 
+
+    
+    
+    }
+</style>
+  <!--end of search blocker-->     
+       
+       
+       
+       
+        {block:Posts}
+
+
+
+<div class="  postcontent   " id="post">
+  {block:Date}
+
+
+
+{block:Ifshowdate}
+
+<div     class="radioactivedating , buttonhover ">
+   <a  class="   buttonlink ,   borderlink   "      href="  {Permalink}#post  ">  {Month} {Year}   </a>
+</div>
+
+
+{/block:Ifshowdate}
+{/block:Date}
+
+<style> .radioactivedating {
+  margin: 0 auto;
+   margin-bottom: 20px;
+  text-transform: lowercase;
+    text-align: center;
+width: fit-content;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<div class="  isthiswhatyoucallawrapper   ">
+<style>
+.isthiswhatyoucallawrapper    {
+overflow: hidden; 
+  
+  
+  
+
+
+    
+    
+    
+}
+
+    
+    
+</style>
+
+
+
+
+
+
+
+
+
+
+
+{block:Title}<div class="titlecenter">{Title}</div>
+<style>
+    .titlecenter{
+        
+        text-align:center;
+        
+    }
+    
+</style>
+
+
+
+{/block:Title}
+<!--
+{block:Text}{Body}{/block:Text}
+-->
+
+
+
+
+{block:Photo}
+      
+      <div     >
+       <img class="imagee" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"> 
+
+
+</div>
+
+
+
+{/block:Photo}
+
+ 
+ 
+ <style>
+    .imagee {
+        
+        width: 100%;
+         
+    }
+    
+    
+</style>
+ 
+
+
+
+
+
+{block:Photoset}
+{block:Photos}
+<div     >
+       <img class="imagee" src={PhotoURL-HighRes}> 
+
+
+</div>
+{/block:Photos}
+{/block:Photoset}
+ 
+
+    
+    
+
+ 
+ 
+
+
+
+{block:Quote}
+{Quote}
+<div   align="right">
+{block:Source}-{Source}<p>{/block:Source}
+</div>
+{/block:Quote}
+ 
+
+
+
+
+
+
+{block:Video}
+
+<div class= " pleasecontainthething" >
+
+{VideoEmbed-700}
+</div>
+
+{/block:Video}
+
+
+
+
+<style>
+    .pleasecontainthething
+{
+ position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+
+}
+    
+</style>
+
+
+
+
+
+
+{block:Link}
+<a href="{URL}" class="linkcontainer" {Target}>
+<span style="display:block;text-align:center;">{Name}</span>
+{block:Thumbnail}<img class="imagee" src="{Thumbnail-HighRes}">{/block:Thumbnail}
+{block:Excerpt}<span style="color:#000;display:block;margin-top:10px;padding-bottom:10px;border-bottom:solid thin {AccentColor};margin-bottom:10px">{Excerpt}</span>{/block:Excerpt}
+{block:Host}<span style="display:block;text-align:right;">{Host}</span>{/block:Host}
+</a>
+{block:Description}{Description}{/block:Description}
+{/block:Link}
+ <style>
+     .linkcontainer{
+         padding:10px;
+         border:solid thin {AccentColor};
+         display:block;
+         text-decoration:underline;
+     }
+ </style>
+
+
+
+
+
+{block:Chat}
+{block:Lines}
+{block:Label}
+<br>{Label}
+{/block:Label}
+&nbsp;{Line}
+{/block:Lines}
+
+
+
+
+ <!--divider code-->
+                       <hr class="rounded2"> 
+                        
+                        
+                        <style>
+            
+                            hr.rounded2 {
+  border-style: none;
+
+}
+
+                        </style>
+           
+                        <!--end of divider code-->            
+
+
+
+
+
+{/block:Chat}
+ 
+
+
+
+
+
+
+{block:Audio}
+<div    class="audiospacer"     >
+
+
+{AudioEmbed}
+
+
+
+ <!--
+{block:TrackName}
+{TrackName}
+{/block:TrackName}  
+
+<br>
+{block:Artist}
+{Artist}
+{/block:Artist}
+ </div> -->
+    
+</div>
+
+{/block:Audio}
+
+
+
+
+<style>
+    .audiospacer {
+      
+
+        position: relative;
+  overflow: hidden;
+  width: 100%;
+
+    }
+    
+    
+
+  
+  
+
+
+</style>
+
+
+
+
+
+
+
+{block:Answer}
+
+<div class="cappy , questionspacer" ><div style="text-align: center;text-transform: lowercase;">
+{Asker} asked: <p></div>
+{Question}
+
+
+</div>
+<style>
+.questionspacer {
+    padding-bottom: 5px;
+    
+}
+    
+</style>
+
+{/block:Answer}
+
+
+
+
+
+
+
+
+
+<!-- proper caption codes-->
+
+
+
+
+
+<div class="cappy" >{Caption}  {Body}   {Replies}
+
+<style>
+    .cappy  {
+
+     border-bottom:solid;
+ border-width: medium;
+ border-color:{AccentColor};
+    
+     margin-bottom: 10px;
+ background:#fff; 
+
+    
+    
+    }    .cappy img  {
+
+     width: 100% ;
+height: auto;
+
+    }
+
+
+    
+    
+</style>
+
+</div>
+
+
+
+<!-- end of caption code-->
+
+
+
+
+
+
+{block:PermalinkPage}
+
+
+{/block:PermalinkPage}
+
+
+
+{block:PinnedPostLabel} 
+<div class="pinnedlabel">
+<a class="pinnedlabel" href="{Permalink}">{PinnedPostLabel}</a> 
+</div>
+
+<style>
+    .pinnedlabel
+    {
+        
+      text-decoration: none;
+text-align: right;  
+         text-transform: lowercase;
+
+  color:{AccentColor};
+    
+           font-weight: bold;
+        
+    }
+    .pinnedlabel:hover{text-decoration:underline;}
+</style>
+{/block:PinnedPostLabel}
+
+
+
+{block:Submission} 
+
+<div class="sumit" >
+
+submitted by 
+
+<a   href="{SubmitterURL}">{Submitter}</a>
+
+
+
+
+
+<style>
+.sumit    {
+   text-align: right; 
+   margin-bottom: 5px;
+    }
+</style>
+</div>
+
+
+{/block:Submission}
+
+
+
+
+ {block:HasTags}
+
+              
+              
+                <!--these are the tag text-->
+                
+                  <div class=" tagtext">    
+                      
+                        {block:Tags}
+                       
+                                <a class=" tagtext " id="tagtext" href="{TagURL}">#{Tag}<br></a>
+                     
+                        {/block:Tags}
+              </div>
+             
+                {/block:HasTags}
+   
+   <style>
+       .tagtext
+       
+       
+       {
+           
+
+
+text-decoration: none;
+text-align: right;
+     border-style:hidden;
+ border-width: medium;
+ border-color:{AccentColor};
+
+ background:#fff;
+           
+           
+           
+       }
+       #tagtext:hover{text-decoration:underline;}
+
+   </style>
+</div>   <!--end inner wrapper-->
+   
+
+  
+  {block:Date}
+    <!--start  of controls-->
+     <div>
+    
+    
+
+ 
+  <!--reblog button-->
+{block:HomePage} 
+<div class="reblogdiv">
+<a class="    borderlink  ,   buttonlink" href="{ReblogURL}"  >reblog</a>
+
+</div>
+
+  
+    
+    <!-- these are the notes code counter-->
+  
+        
+        <div class="        notediv   " id="notes">
+        <a  class="borderlink , buttonlink  "   href="   {Permalink}#notes   "  >  {NoteCountWithLabel}  </a>
+        
+        </div>
+        
+{/block:HomePage}
+
+
+   
+   
+   {block:PermalinkPage} 
+<div class="reblogdiv">
+<a class="borderlink  , buttonlink " href="{ReblogURL}"  >reblog</a>
+</div>
+
+
+    
+  
+    
+    <!-- these are the notes code counter-->
+  
+        
+        <div class="        notediv     " id="notes">
+        <a  class="borderlink , buttonlink  "   href="   {Permalink}#notes   "  >  {NoteCountWithLabel}  </a>
+        
+        </div>
+        
+{/block:PermalinkPage}
+   
+   {block:TagPage} 
+   
+   <div class="reblogdiv">
+<a class="borderlink  , buttonlink " href="{ReblogURL}"  >reblog</a>
+</div>
+
+
+    
+  
+    
+    <!-- these are the notes code counter-->
+  
+        
+        <div class="        notediv     " id="notes">
+        <a  class="borderlink , buttonlink  "   href="   {Permalink}#notes   "  >  {NoteCountWithLabel}  </a>
+        
+        </div>
+   
+   
+   {/block:TagPage}
+   
+     
+   {block:SearchPage}
+   <div class="reblogdiv">
+<a class="borderlink  , buttonlink " href="{ReblogURL}"  >reblog</a>
+</div>
+
+
+    
+  
+    
+    <!-- these are the notes code counter-->
+  
+        
+        <div class="        notediv     " id="notes">
+        <a  class="borderlink , buttonlink  "   href="   {Permalink}#notes   "  >  {NoteCountWithLabel}  </a>
+        
+        </div>
+   
+   
+{/block:SearchPage}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     <!-- end of note code counter-->
+    
+    
+
+     
+
+
+
+     
+     
+
+     
+ </div>
+
+
+<!--end of controls-->   
+    
+    
+    
+  {/block:Date}
+</div>
+
+{/block:Posts}
+ 
+ 
+ 
+ 
+ <!-- this is the note window-->
+{block:PostNotes}
+
+ <div class= "  postcontent  ,notescontent   ">
+<div class= "notewrapper">
+{PostNotes}
+</div>
+<style>
+    .notewrapper {
+        
+display: block;
+        
+    }
+    
+
+
+    
+    
+    ol.notes {
+
+                list-style-type: none;
+
+display: inline;
+margin: 0 auto;
+            }
+    
+    
+     ol.notes li.note {
+             
+               
+                border-top: solid medium {AccentColor};
+            padding: 5px;
+            }
+    ol.notes li.note img.avatar {
+                display: none;
+                
+            }
+
+    
+    
+    
+    
+    
+    
+    
+</style>
+
+    
+</div>
+
+{/block:PostNotes}
+                       
+                       
+                       
+                       
+
+                       
+                       
+                       
+                        <!-- end of posts code-->               
+                                       
+                                       
+
+                    
+                      
+
+                       
+                       
+                       
+                      
+                        
+                        
+                        
+                        
+                        
+  <!--start of warp-->
+
+  
+                        <div  class="warpdrive"  >
+
+                   
+                     
+                   <!--these are the previous button codes-->
+                     {block:PreviousPage}
+                   
+
+                        
+
+                <a style="display: inline-block;" class="borderlink" href="{PreviousPage}"><==</a>
+        
+
+                        
+
+                    
+                    
+            {/block:PreviousPage}
+                   
+
+                    <!--end of previous button codes-->
+                   
+                   
+             
+{block:JumpPagination length="8"}
+
+
+{block:CurrentPage}
+                    <a href="{URL}" class="borderlink , warper "
+                    
+                    
+                    style="
+                    
+
+display: inline-block;
+
+                    
+                    "
+                    
+                    
+                    
+                    >{PageNumber}</a>
+                {/block:CurrentPage}{block:JumpPage}
+                    <a style="display: inline-block;" class="borderlink" href="{URL}">{PageNumber}</a>
+                {/block:JumpPage}{/block:JumpPagination}
+              
+                   
+                   
+                   <style>
+                       .warpdrive{
+                           
+                           
+                           margin:0 auto;
+                           text-align:center;
+                           
+                           
+                  
+justify-content: center;
+                           
+                           word-break:keep-all;
+                            flex-wrap: wrap:
+                       }
+                       
+                       .warper{
+                           
+                           color:white;
+
+background:{AccentColor};
+                           
+                       }
+                       
+                       
+        
+                       
+                       
+                   </style>
+                   
+                                        
+                   
+                   <!--these are the next button codes-->
+                  
+                    {block:NextPage}
+                  
+
+
+                        <style>
+
+                        </style>
+                        
+
+                <a style="display: inline-block;" class="borderlink" href="{NextPage}">==></a>
+           
+
+  
+
+
+                   
+                   
+                   
+{/block:NextPage} 
+                        </div>
+                        
+
+                           <!--end of warp-->
+                        
+                        
+                        
+         <style>
+      
+
+  .nextlink
+
+    
+     {
+    padding:5px;
+
+  position: relative;
+
+
+margin: auto;
+
+   max-width: 300px;
+   width:90%;
+
+   font-weight: bold;
+
+text-transform: lowercase;
+text-decoration: none;
+ text-align: center;
+ border-style:solid;
+ border-width: medium;
+ border-color:{AccentColor};
+
+ background:#fff;
+  display: block;
+
+   transform: scale(0.9);
+    transition: transform 0.08s;
+   
+  
+  
+     }
+  
+
+.nextlink:hover
+
+{
+
+text-decoration: none;
+ text-align: center:
+ border-style:solid;
+ border-width: medium;
+ border-color:{AccentColor};
+
+ background:#fff;
+ transform: scale(1.1);
+
+     z-index: 413;
+    
+} 
+      
+
+  </style>          
+                   
+   
+   
+    
+                        
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+
+                   <!--end of next button codes-->
+                   
+                   
+                   
+
+           <!--divider code-->
+                       <hr class="rounded"> 
+
+                        <!--end of divider code-->        
+            
+                   
+                        
+                        
+                    </div> <!-- .main -->
+                 
+                  
+               
+               
+               
+                   <!--end of posts code-->
+                   
+                   
+                   
+
+                    <div class="sidebar">
+             {block:Ifshowsidebar2}       
+
+                   <!-- this are the box codes or sidebar codes --> 
+                   
+<!--divider code-->
+                       <hr class="rounded"> 
+
+                        <!--end of divider code-->
+
+{block:ShowHeaderImage} 
+
+<!--header code-->
+    <a href={BlogURL}> 
+               <img style="width:100%;display:block;" src="      {HeaderImage}    " >
+                 
+                   </a>
+ <!--end of header code-->                  
+                   
+   
+                   
+                   {/block:ShowHeaderImage}
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+
+                   
+                   
+                   
+                   
+                   
+                    <!-- this is the twitter code -->
+                    {block:Ifshowtwittertimeline}
+                    {text:embed your twitter timeline here}
+                   <style>#twitter-widget-0{width:100%!important;}</style>
+                    {/block:Ifshowtwittertimeline}
+                    <!-- end of twitter code -->
+                    
+                    
+              
+                    
+                   
+                    
+                    
+                    
+                    
+                    <!-- end of box code -->
+                    
+  
+  
+
+  
+                    {/block:Ifshowsidebar2}
+                    
+                    </div> <!-- .sidebar -->
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div> <!-- .container -->
+            
+                
+                 
+            </section>        
+
+
+
+
+ 
+    </body>
+   
+    
+</html>
